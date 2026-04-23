@@ -7,255 +7,172 @@
   <meta name="description" content="Aprenda a viver a fé católica com propósito, direção e prática real. O curso Caminho Vivo transforma sua vida espiritual passo a passo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
-    :root {
-      --black:    #000000;
-      --dark:     #0d0d0d;
-      --dark2:    #1a1a1a;
-      --blue1:    #1567c6;
-      --blue2:    #3786e3;
-      --gold:     #c08834;
-      --gold2:    #fab956;
-      --gold3:    #fdb022;
-      --gold4:    #ffd545;
-      --white:    #f6f6f6;
-      --white2:   #fcfcfd;
-      --muted:    #6b7785;
-      --muted2:   #475467;
-      --gray-card: #e1e1e1;
-      --border-gold: rgba(255,218,162,0.35);
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--black);
-      color: var(--white);
+      background: #000;
+      color: #f6f6f6;
       line-height: 1.65;
-      font-size: 1rem;
+      font-size: 16px;
       overflow-x: hidden;
     }
 
-    .container { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+    .container {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+    @media (max-width: 767px) { .container { padding: 0 20px; } }
     .text-center { text-align: center; }
 
-    /* ── Announcement bar ── */
+    /* ─── ANNOUNCEMENT BAR ─── */
     .announcement {
-      background: linear-gradient(90deg, var(--blue1), var(--blue2));
+      background: linear-gradient(90deg, #1567c6, #3786e3);
       color: #fff;
       text-align: center;
-      padding: 10px 16px;
-      font-size: 0.86rem;
+      padding: 10px 20px;
+      font-size: 14px;
       font-weight: 500;
     }
-    .announcement strong { color: var(--gold4); }
+    .announcement strong { color: #ffd545; }
 
-    /* ── Nav ── */
+    /* ─── NAV ─── */
     .nav {
-      background: rgba(0,0,0,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
       position: sticky;
       top: 0;
       z-index: 100;
       padding: 14px 0;
     }
     .nav-inner {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+    @media (max-width: 767px) { .nav-inner { padding: 0 20px; } }
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
     }
-    .logo-icon {
-      width: 36px; height: 36px;
-      background: linear-gradient(135deg, var(--blue1), var(--blue2));
+    .logo-mark {
+      width: 34px; height: 34px;
+      background: linear-gradient(315deg, #1567c6, #3786e3);
       border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
       color: #fff;
-      font-size: 1rem;
+      font-size: 15px;
     }
-    .logo-text {
+    .logo-name {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white2);
+      font-size: 17px;
+      font-weight: 800;
+      color: #f6f6f6;
     }
-    .nav-cta {
-      background: linear-gradient(315deg, var(--blue1), var(--blue2));
-      color: #fff;
-      border: none;
-      padding: 10px 22px;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.87rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.15s;
-    }
-    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--black);
-      padding: 64px 0 0;
-      text-align: center;
-      position: relative;
-    }
-    .hero-eyebrow {
-      display: inline-block;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.75);
-      padding: 5px 18px;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 900;
-      color: var(--white);
-      max-width: 780px;
-      margin: 0 auto 14px;
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--gold2);
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 1.6vw, 1.15rem);
-      color: rgba(255,255,255,0.6);
-      max-width: 540px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-    .hero-sub strong { color: var(--white2); }
-
-    /* Rating row */
-    .rating-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-    .avatars {
-      display: flex;
-      align-items: center;
-    }
-    .avatar-mini {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      border: 2px solid var(--black);
-      margin-left: -8px;
-      background: linear-gradient(135deg, #1567c6, #3786e3);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .avatar-mini:first-child { margin-left: 0; }
-    .rating-text {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.75);
-    }
-    .rating-text strong { color: var(--white2); }
-    .stars-mini { color: var(--gold4); font-size: 0.85rem; letter-spacing: 1px; }
-
-    /* Buttons */
-    .btn-blue {
-      background: linear-gradient(315deg, var(--blue1), var(--blue2));
+    .nav-btn {
+      background: linear-gradient(315deg, #1567c6, #3786e3);
       border: 1px solid #3786e2;
       color: #fff;
       border-radius: 100px;
-      padding: 15px 36px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: opacity 0.2s, transform 0.15s;
-      letter-spacing: 0.2px;
-    }
-    .btn-blue:hover { opacity: 0.88; transform: translateY(-2px); }
-    .btn-blue-lg { padding: 17px 44px; font-size: 1.08rem; }
-
-    .btn-gold {
-      background: var(--gold3);
-      border: none;
-      color: #101828;
-      border-radius: 8px;
-      padding: 15px 36px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: opacity 0.2s, transform 0.15s;
-      letter-spacing: -0.3px;
-    }
-    .btn-gold:hover { opacity: 0.9; transform: translateY(-2px); }
-    .btn-gold-lg { padding: 17px 44px; font-size: 1.1rem; }
-
-    .btn-ghost {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(193,193,193,0.35);
-      color: var(--white);
-      border-radius: 6px;
-      padding: 12px 22px;
-      font-size: 0.95rem;
+      padding: 9px 22px;
+      font-size: 14px;
       font-weight: 500;
-      cursor: pointer;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.2s;
+      letter-spacing: 0.2px;
+      transition: opacity 0.2s;
     }
-    .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+    .nav-btn:hover { opacity: 0.85; }
 
-    .cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    /* VSL block */
-    .vsl-wrapper {
-      max-width: 940px;
-      margin: 40px auto 0;
-      padding: 0 12px;
+    /* ─── HERO ─── */
+    .hero {
+      background: #000;
+      padding: 120px 0 0;
+      text-align: center;
       position: relative;
-    }
-    .vsl-border {
-      border: 1px solid var(--border-gold);
-      border-radius: 12px;
-      padding: 10px;
-      background: rgba(0,0,0,0.5);
-    }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      border-radius: 8px;
       overflow: hidden;
-      background: #0d0d0d;
+    }
+    @media (max-width: 991px) { .hero { padding-top: 80px; } }
+    @media (max-width: 767px) { .hero { padding-top: 64px; } }
+
+    /* subtle radial glow behind headline */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 400px;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(21,103,198,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 52px;
+      font-weight: 900;
+      color: #f6f6f6;
+      max-width: 32ch;
+      margin: 0 auto 10px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      position: relative;
+    }
+    @media (max-width: 991px) { .hero h1 { font-size: 40px; } }
+    @media (max-width: 767px) { .hero h1 { font-size: 30px; line-height: 1.25; } }
+    @media (max-width: 479px) { .hero h1 { font-size: 26px; } }
+
+    .hero-sub {
+      font-size: 20px;
+      font-weight: 400;
+      color: #c08834;
+      max-width: 52ch;
+      margin: 0 auto 60px;
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+      position: relative;
+    }
+    @media (max-width: 991px) { .hero-sub { font-size: 18px; margin-bottom: 40px; } }
+    @media (max-width: 767px) { .hero-sub { font-size: 16px; margin-bottom: 30px; } }
+
+    /* ─── VIDEO ─── */
+    .video-hero {
+      z-index: 99;
+      border: 0.5px solid #423828;
+      border-radius: 12px;
+      width: 100%;
+      margin-bottom: 60px;
+      padding: 10px;
+      position: relative;
+      left: 50%;
+      transform: perspective(862px) perspective(2000px) translate(-50%);
+      overflow: hidden;
+    }
+    @media (max-width: 991px) { .video-hero { border-radius: 8px; } }
+    @media (max-width: 767px) { .video-hero { border-radius: 6px; margin-bottom: 40px; padding: 5px; } }
+
+    .inner-video {
+      border-radius: 8px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .video-aspect {
+      aspect-ratio: 16/9;
+      border-radius: 6px;
+      width: 100%;
+      background: #0d1117;
+      position: relative;
+      overflow: hidden;
     }
     .video-placeholder {
       position: absolute;
@@ -265,95 +182,168 @@
       align-items: center;
       justify-content: center;
       gap: 18px;
-      background: linear-gradient(160deg, #111827, #0d1117);
+      background: linear-gradient(160deg, #0d1a2e, #060d18);
       cursor: pointer;
     }
-    .play-btn {
-      width: 80px; height: 80px;
-      background: linear-gradient(315deg, var(--blue1), var(--blue2));
+    .play-ring {
+      width: 82px; height: 82px;
+      background: linear-gradient(315deg, #1567c6, #3786e3);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 14px rgba(21,103,198,0.15), 0 8px 32px rgba(21,103,198,0.45);
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 0 12px rgba(21,103,198,0.15), 0 8px 32px rgba(21,103,198,0.4);
     }
-    .play-btn svg { width: 30px; height: 30px; fill: #fff; margin-left: 5px; }
-    .play-btn:hover { transform: scale(1.08); box-shadow: 0 0 0 16px rgba(21,103,198,0.2), 0 12px 40px rgba(21,103,198,0.5); }
+    .play-ring svg { width: 30px; height: 30px; fill: #fff; margin-left: 5px; }
+    .play-ring:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 0 20px rgba(21,103,198,0.12), 0 12px 40px rgba(21,103,198,0.55);
+    }
     .video-caption {
-      color: rgba(255,255,255,0.65);
-      font-size: 0.93rem;
-      text-align: center;
-      padding: 0 24px;
+      color: rgba(255,255,255,0.55);
+      font-size: 15px;
     }
 
-    /* Hero stats */
-    .hero-stats {
+    /* ─── HERO FEATURES ROW ─── */
+    .features-lp {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0;
+      align-items: center;
       justify-content: center;
-      margin-top: 48px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 28px 0 56px;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      padding: 0 8px;
     }
-    .stat {
+    .feature-item {
       text-align: center;
-      padding: 0 28px;
-      border-right: 1px solid rgba(255,255,255,0.08);
+      padding: 0 8px;
+      border-right: 1px solid rgba(255,255,255,0.1);
     }
-    .stat:last-child { border-right: none; }
-    .stat-num {
-      display: block;
+    .feature-item:last-child { border-right: none; }
+    .feature-item h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--white2);
-      line-height: 1.2;
+      font-size: 15px;
+      font-weight: 700;
+      color: #f6f6f6;
+      margin-bottom: 2px;
     }
-    .stat-label {
-      font-size: 0.77rem;
-      color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    @media (max-width: 580px) {
-      .stat { padding: 10px 14px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); width: 50%; }
-    }
+    .feature-item p { font-size: 13px; color: rgba(255,255,255,0.45); }
 
-    /* ── PAIN section ── */
-    .pain {
-      background: #0d0d0d;
-      padding: 72px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
+    .rating-feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
     }
+    .avatars {
+      display: flex; align-items: center;
+    }
+    .av {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid #000;
+      margin-left: -7px;
+      background: linear-gradient(135deg, #1567c6, #3786e3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; font-weight: 700; color: #fff;
+    }
+    .av:first-child { margin-left: 0; }
+    .rating-nums {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 14px; color: #f6f6f6; font-weight: 700;
+    }
+    .rating-nums span { color: #fdb022; font-size: 12px; letter-spacing: 2px; }
+    .rating-label { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+    /* ─── HERO CTA ─── */
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 70px;
+    }
+    .btn-blue {
+      background: linear-gradient(315deg, #1567c6, #3786e3);
+      border: 1px solid #3786e2;
+      color: #fff;
+      border-radius: 100px;
+      width: 100%;
+      max-width: 300px;
+      height: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-blue:hover { opacity: 0.87; transform: translateY(-2px); }
+    .btn-blue-wide { max-width: 380px; font-size: 17px; height: 54px; font-weight: 600; }
+    .btn-gold {
+      background: #fdb022;
+      border: none;
+      color: #101828;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 360px;
+      height: 54px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-gold:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    @keyframes pulse-blue {
+      0%,100% { box-shadow: 0 4px 20px rgba(21,103,198,0.4); }
+      50%      { box-shadow: 0 8px 40px rgba(21,103,198,0.65); }
+    }
+    .btn-pulse { animation: pulse-blue 2.5s infinite; }
+
+    /* ─── SECTION DEFAULTS ─── */
+    .section { padding: 80px 0; }
+    .section-dark { background: #000; }
+    .section-darker { background: #0a0a0a; }
     .section-label {
-      font-size: 0.74rem;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold2);
+      color: #fab956;
       display: block;
       margin-bottom: 10px;
     }
     .section-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.3rem);
-      font-weight: 800;
-      color: var(--white);
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 900;
+      color: #f6f6f6;
       margin-bottom: 12px;
       line-height: 1.2;
     }
     .section-sub {
-      color: rgba(255,255,255,0.5);
-      max-width: 520px;
+      font-size: 16px;
+      color: rgba(255,255,255,0.45);
+      max-width: 500px;
       margin: 0 auto 44px;
-      font-size: 0.98rem;
+      line-height: 1.7;
     }
     .divider {
-      width: 44px; height: 3px;
-      background: linear-gradient(90deg, var(--blue1), var(--blue2));
+      width: 40px; height: 2px;
+      background: linear-gradient(90deg, #1567c6, #3786e3);
       border-radius: 2px;
       margin: 0 auto 20px;
     }
+
+    /* ─── PAIN ─── */
     .pain-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -361,51 +351,47 @@
       align-items: center;
     }
     @media (max-width: 680px) { .pain-grid { grid-template-columns: 1fr; } }
-    .pain-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .pain-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .pain-list li {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      font-size: 0.97rem;
-      color: rgba(255,255,255,0.8);
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
       padding: 14px 16px;
       background: rgba(255,255,255,0.04);
       border-radius: 10px;
-      border-left: 3px solid rgba(192,136,52,0.5);
+      border-left: 2px solid rgba(192,136,52,0.6);
+      line-height: 1.5;
     }
-    .pain-icon { flex-shrink: 0; font-size: 1.1rem; margin-top: 1px; }
-    .pain-cta-box {
-      background: linear-gradient(135deg, #0f1f3d, #1a2d55);
-      border: 1px solid rgba(55,134,227,0.3);
+    .pain-icon { flex-shrink: 0; font-size: 16px; }
+    .pain-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #132040 100%);
+      border: 1px solid rgba(55,134,227,0.25);
       border-radius: 16px;
-      padding: 40px 36px;
+      padding: 40px 32px;
       text-align: center;
     }
-    .pain-cta-box h3 {
+    .pain-box h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.3rem;
+      font-size: 22px;
       font-weight: 800;
-      color: var(--white2);
+      color: #f6f6f6;
       margin-bottom: 14px;
     }
-    .pain-cta-box p { color: rgba(255,255,255,0.65); margin-bottom: 28px; font-size: 0.97rem; }
+    .pain-box p { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 28px; line-height: 1.7; }
 
-    /* ── BENEFITS ── */
-    .benefits {
-      background: var(--black);
-      padding: 72px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
+    /* ─── BENEFITS ─── */
     .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
     }
     .benefit-card {
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      padding: 28px 24px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 26px 22px;
       transition: background 0.2s, border-color 0.2s;
     }
     .benefit-card:hover {
@@ -413,45 +399,29 @@
       border-color: rgba(55,134,227,0.3);
     }
     .benefit-icon {
-      width: 48px; height: 48px;
+      width: 46px; height: 46px;
       background: rgba(21,103,198,0.18);
       border: 1px solid rgba(55,134,227,0.3);
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 16px;
+      font-size: 20px;
+      margin-bottom: 14px;
     }
     .benefit-card h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.97rem;
+      font-size: 15px;
       font-weight: 700;
-      color: var(--white2);
+      color: #f6f6f6;
       margin-bottom: 8px;
     }
-    .benefit-card p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+    .benefit-card p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.6; }
 
-    /* ── TESTIMONIALS ── */
-    .social-proof {
-      background: var(--black);
-      padding: 72px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      overflow: hidden;
-    }
-    .testimonials-scroll {
-      display: flex;
-      gap: 16px;
-      margin-top: 44px;
-      overflow-x: auto;
-      padding-bottom: 16px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .testimonials-scroll::-webkit-scrollbar { display: none; }
+    /* ─── TESTIMONIALS ─── */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 44px;
+      gap: 14px;
+      margin-top: 40px;
     }
     .testimonial {
       background: linear-gradient(135deg, #e1e1e1, #eeeeee);
@@ -460,136 +430,114 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      min-width: 280px;
     }
-    .stars { color: #f79009; font-size: 0.9rem; letter-spacing: 2px; }
+    .stars { color: #f79009; font-size: 14px; letter-spacing: 2px; display: flex; gap: 3px; }
     .testimonial-text {
-      font-size: 0.95rem;
-      color: var(--muted2);
+      font-size: 15px;
+      color: #475467;
       line-height: 1.65;
-      font-style: italic;
       flex: 1;
     }
     .testimonial-author { display: flex; align-items: center; gap: 12px; }
     .author-avatar {
       width: 46px; height: 46px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue1), var(--blue2));
+      border-radius: 100px;
+      background: linear-gradient(315deg, #1567c6, #3786e3);
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.82rem;
-      color: #fff;
-      font-weight: 700;
+      font-size: 13px; color: #fff; font-weight: 700;
       flex-shrink: 0;
     }
-    .author-name { font-weight: 600; font-size: 0.9rem; color: var(--muted2); }
-    .author-role { font-size: 0.77rem; color: #98a2b3; }
+    .author-name { font-weight: 600; font-size: 14px; color: #475467; margin-bottom: 3px; }
+    .author-role { font-size: 12px; color: #98a2b3; }
 
-    /* ── MODULES ── */
-    .modules {
-      background: #0d0d0d;
-      padding: 72px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
+    /* ─── MODULES ─── */
     .modules-layout {
       display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 44px;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
       align-items: start;
     }
     @media (max-width: 820px) { .modules-layout { grid-template-columns: 1fr; } }
-    .module-list { display: flex; flex-direction: column; gap: 12px; }
+    .module-list { display: flex; flex-direction: column; gap: 10px; }
     .module-item {
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.07);
       border-radius: 10px;
       padding: 18px 20px;
       display: flex;
-      gap: 16px;
+      gap: 14px;
       align-items: flex-start;
       transition: background 0.2s;
     }
     .module-item:hover { background: rgba(255,255,255,0.07); }
     .module-num {
       width: 32px; height: 32px; flex-shrink: 0;
-      background: linear-gradient(315deg, var(--blue1), var(--blue2));
+      background: linear-gradient(315deg, #1567c6, #3786e3);
       color: #fff;
       border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
+      font-weight: 700; font-size: 14px;
     }
     .module-info h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--white2);
-      margin-bottom: 4px;
+      font-size: 15px; font-weight: 700;
+      color: #f6f6f6; margin-bottom: 4px;
     }
-    .module-info p { font-size: 0.86rem; color: rgba(255,255,255,0.5); }
+    .module-info p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.55; }
     .modules-sidebar { position: sticky; top: 80px; }
     .bonus-box {
-      background: linear-gradient(135deg, #0f1f3d, #1a2d55);
-      border: 1px solid rgba(55,134,227,0.3);
+      background: linear-gradient(135deg, #0f1f3d, #132040);
+      border: 1px solid rgba(55,134,227,0.25);
       border-radius: 16px;
       padding: 28px 24px;
     }
     .bonus-box h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--white2);
-      margin-bottom: 20px;
+      font-size: 17px; font-weight: 800;
+      color: #f6f6f6; margin-bottom: 20px;
     }
     .bonus-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
     .bonus-icon {
       width: 32px; height: 32px; flex-shrink: 0;
       background: rgba(55,134,227,0.2);
-      border: 1px solid rgba(55,134,227,0.4);
+      border: 1px solid rgba(55,134,227,0.35);
       border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.95rem;
+      font-size: 14px;
     }
-    .bonus-item h4 { font-size: 0.9rem; color: var(--white2); margin-bottom: 3px; font-weight: 600; }
-    .bonus-item p { font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+    .bonus-item h4 { font-size: 14px; color: #f6f6f6; font-weight: 600; margin-bottom: 3px; }
+    .bonus-item p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
 
-    /* ── DIFFERENTIALS ── */
-    .differentials {
-      background: var(--black);
-      padding: 72px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
+    /* ─── DIFFERENTIALS ─── */
     .diff-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
       margin-top: 40px;
     }
     .diff-item {
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 24px 18px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-top: 2px solid #3786e3;
+      border-radius: 10px;
+      padding: 22px 16px;
       text-align: center;
-      border-top: 3px solid var(--blue2);
       transition: background 0.2s;
     }
     .diff-item:hover { background: rgba(255,255,255,0.07); }
-    .diff-emoji { font-size: 1.9rem; margin-bottom: 10px; display: block; }
+    .diff-emoji { font-size: 28px; margin-bottom: 10px; display: block; }
     .diff-item h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--white2);
-      margin-bottom: 8px;
+      font-size: 14px; font-weight: 700;
+      color: #f6f6f6; margin-bottom: 7px;
     }
-    .diff-item p { font-size: 0.83rem; color: rgba(255,255,255,0.5); }
+    .diff-item p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.55; }
 
-    /* ── CTA FINAL ── */
+    /* ─── CTA FINAL ─── */
     .cta-final {
-      background: var(--black);
+      background: #000;
       text-align: center;
-      padding: 80px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 90px 0;
       position: relative;
       overflow: hidden;
     }
@@ -597,105 +545,97 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(21,103,198,0.12) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(21,103,198,0.13) 0%, transparent 70%);
       pointer-events: none;
     }
     .cta-final h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-size: clamp(28px, 4vw, 44px);
       font-weight: 900;
-      color: var(--white);
-      max-width: 600px;
-      margin: 0 auto 14px;
+      color: #f6f6f6;
+      max-width: 22ch;
+      margin: 0 auto 12px;
       line-height: 1.2;
+      position: relative;
     }
-    .cta-final h2 em { font-style: normal; color: var(--gold2); }
+    .cta-final h2 em { font-style: normal; color: #fab956; }
     .cta-final p {
-      color: rgba(255,255,255,0.6);
-      max-width: 480px;
-      margin: 0 auto 32px;
-      font-size: 1rem;
+      font-size: 17px;
+      color: rgba(255,255,255,0.55);
+      max-width: 44ch;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      position: relative;
     }
-    .guarantee-badge {
+    .cta-final-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+    }
+    .guarantee {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 100px;
-      padding: 10px 22px;
-      font-size: 0.84rem;
-      color: rgba(255,255,255,0.7);
-      margin-top: 8px;
+      padding: 9px 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 4px;
     }
 
-    /* ── FAQ ── */
-    .faq {
-      background: #0d0d0d;
-      padding: 72px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .faq-list { max-width: 660px; margin: 40px auto 0; }
-    .faq-item {
-      border-bottom: 1px solid rgba(223,223,223,0.12);
-      padding: 18px 0;
-    }
+    /* ─── FAQ ─── */
+    .faq { background: #0a0a0a; padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .faq-list { max-width: 640px; margin: 40px auto 0; }
+    .faq-item { border-bottom: 1px solid rgba(223,223,223,0.1); padding: 18px 0; }
     .faq-q {
-      font-weight: 600;
-      font-size: 0.97rem;
-      color: var(--white2);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
+      font-size: 16px; font-weight: 600;
+      color: #f6f6f6; cursor: pointer;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 12px;
       user-select: none;
     }
     .faq-q::after {
-      content: '+';
-      font-size: 1.3rem;
-      color: var(--blue2);
-      flex-shrink: 0;
+      content: '+'; font-size: 22px; font-weight: 300;
+      color: #3786e3; flex-shrink: 0;
       transition: transform 0.2s;
-      font-weight: 300;
     }
     .faq-item.open .faq-q::after { transform: rotate(45deg); }
     .faq-a {
-      font-size: 0.93rem;
-      color: rgba(255,255,255,0.5);
-      max-height: 0;
-      overflow: hidden;
+      font-size: 14px; color: rgba(255,255,255,0.5);
+      max-height: 0; overflow: hidden;
       transition: max-height 0.3s ease, margin-top 0.2s;
+      line-height: 1.65;
     }
     .faq-item.open .faq-a { max-height: 200px; margin-top: 12px; }
 
-    /* ── Footer ── */
+    /* ─── FOOTER ─── */
     .footer {
-      background: var(--black);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #9b9b9b;
+      background: #000;
+      border-top: 1px solid rgba(255,255,255,0.07);
       text-align: center;
       padding: 44px 24px;
-      font-size: 0.83rem;
+      font-size: 13px;
+      color: #9b9b9b;
     }
-    .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    .footer a:hover { color: var(--white2); }
+    .footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer a:hover { color: #f6f6f6; }
     .footer-logo {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--white2);
-      display: block;
-      margin-bottom: 10px;
+      font-size: 20px; font-weight: 800;
+      color: #f6f6f6; display: block; margin-bottom: 12px;
     }
 
-    /* ── Floating bar ── */
+    /* ─── FLOATING BAR ─── */
     .floating-bar {
       position: fixed;
       bottom: 0; left: 0; right: 0;
-      background: rgba(0,0,0,0.96);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.97);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,0.08);
       padding: 12px 24px;
       display: flex;
       align-items: center;
@@ -706,329 +646,204 @@
       transition: transform 0.3s;
     }
     .floating-bar.visible { transform: translateY(0); }
-    .floating-bar p { color: rgba(255,255,255,0.8); font-size: 0.88rem; }
+    .floating-bar p { color: rgba(255,255,255,0.75); font-size: 14px; }
     @media (max-width: 520px) { .floating-bar { flex-direction: column; gap: 8px; } }
-
-    @keyframes pulse-blue {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(55,134,227,0.4), 0 4px 20px rgba(21,103,198,0.4); }
-      50% { box-shadow: 0 0 0 8px rgba(55,134,227,0.1), 0 8px 36px rgba(21,103,198,0.6); }
-    }
-    .btn-pulse { animation: pulse-blue 2.5s infinite; }
-
-    /* responsive */
-    @media (max-width: 600px) {
-      .cta-group { flex-direction: column; align-items: center; }
-      .btn-blue, .btn-gold { width: 100%; max-width: 320px; text-align: center; }
-    }
   </style>
 </head>
 <body>
 
-<!-- Announcement Bar -->
+<!-- Announcement -->
 <div class="announcement">
   <strong>⚡ Vagas Limitadas:</strong> Esta turma fecha em breve — garanta sua vaga hoje
 </div>
 
 <!-- Nav -->
 <nav class="nav">
-  <div class="container nav-inner">
+  <div class="nav-inner">
     <a href="#" class="logo">
-      <div class="logo-icon">✝</div>
-      <span class="logo-text">Caminho Vivo</span>
+      <div class="logo-mark">✝</div>
+      <span class="logo-name">Caminho Vivo</span>
     </a>
-    <a href="#inscricao" class="nav-cta">Quero me inscrever</a>
+    <a href="#inscricao" class="nav-btn">Quero me inscrever</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
   <div class="container">
-    <span class="hero-eyebrow">✦ Curso Online de Espiritualidade Católica</span>
-    <h1>
-      Pare de viver a fé só no domingo.<br>
-      Descubra como ela transforma<br>
-      <em>cada dia da sua vida.</em>
-    </h1>
+
+    <!-- 1. HEADLINE -->
+    <h1>Pare de viver a fé só no domingo. Descubra como ela transforma cada dia da sua vida.</h1>
+
+    <!-- 2. SUBHEADLINE DOURADO -->
     <p class="hero-sub">
-      O <strong>Caminho Vivo</strong> é o curso que ensina, passo a passo, como praticar a fé católica com propósito real — com base no Catecismo, nos dogmas e na Bíblia.
+      O <strong style="color:#f6f6f6;">Caminho Vivo</strong> é o curso que ensina, passo a passo, como praticar a fé católica com propósito real — com base no Catecismo, nos dogmas e na Bíblia.
     </p>
 
-    <!-- Rating row -->
-    <div class="rating-row">
-      <div class="avatars">
-        <div class="avatar-mini">AM</div>
-        <div class="avatar-mini">RC</div>
-        <div class="avatar-mini">JF</div>
-        <div class="avatar-mini">TP</div>
-        <div class="avatar-mini">CM</div>
-      </div>
-      <span class="stars-mini">★★★★★</span>
-      <span class="rating-text"><strong>4.9/5</strong> · mais de 2.400 alunos</span>
-    </div>
-
-    <div class="cta-group">
-      <a href="#inscricao" class="btn-blue btn-blue-lg btn-pulse">Quero viver minha fé de verdade</a>
-      <a href="#vsl" class="btn-ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        Assistir ao vídeo primeiro
-      </a>
-    </div>
-    <p style="font-size:0.8rem; color:rgba(255,255,255,0.35);">Sem complicações. Sem jargões. Só prática que funciona.</p>
-  </div>
-
-  <!-- VSL -->
-  <div class="vsl-wrapper" id="vsl">
-    <div class="vsl-border">
-      <div class="video-container">
-        <!-- Substituir pelo embed real: YouTube, Vimeo, Panda, etc. -->
-        <!-- <iframe src="https://www.youtube.com/embed/SEU_ID" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:8px;"></iframe> -->
-        <div class="video-placeholder">
-          <div class="play-btn">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+    <!-- 3. VÍDEO / VSL -->
+    <div class="video-hero" id="vsl">
+      <div class="inner-video">
+        <div class="video-aspect">
+          <!-- Substituir pelo seu embed real (YouTube, Vimeo, Panda, etc.) -->
+          <!-- <iframe src="https://www.youtube.com/embed/SEU_ID?rel=0" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe> -->
+          <div class="video-placeholder">
+            <div class="play-ring">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <p class="video-caption">Assista ao vídeo — descubra como transformar sua vida espiritual a partir de hoje</p>
           </div>
-          <p class="video-caption">
-            "Assista ao vídeo e descubra como transformar sua vida espiritual a partir de hoje"
-          </p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Stats -->
-  <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-num">2.400+</span>
-      <span class="stat-label">alunos transformados</span>
+    <!-- 4. FEATURES ROW -->
+    <div class="features-lp">
+      <div class="feature-item">
+        <h3>5 Módulos</h3>
+        <p>práticos e objetivos</p>
+      </div>
+      <div class="feature-item">
+        <h3>Acesso Vitalício</h3>
+        <p>ao conteúdo completo</p>
+      </div>
+      <div class="feature-item">
+        <h3>Direção Espiritual</h3>
+        <p>acompanhamento individual</p>
+      </div>
+      <div class="feature-item rating-feature">
+        <div class="avatars">
+          <div class="av">AM</div>
+          <div class="av">RC</div>
+          <div class="av">JF</div>
+          <div class="av">TP</div>
+          <div class="av">+</div>
+        </div>
+        <div class="rating-nums">
+          <span>★★★★★</span> 4.9/5
+        </div>
+        <div class="rating-label">2.400+ alunos</div>
+      </div>
     </div>
-    <div class="stat">
-      <span class="stat-num">4.9 ★</span>
-      <span class="stat-label">avaliação média</span>
+
+    <!-- 5. CTA (depois do vídeo) -->
+    <div class="hero-cta-wrap">
+      <a href="#inscricao" class="btn-blue btn-blue-wide btn-pulse">Quero viver minha fé de verdade</a>
+      <p style="font-size:13px; color:rgba(255,255,255,0.3);">Sem complicações. Sem jargões. Só prática que funciona.</p>
     </div>
-    <div class="stat">
-      <span class="stat-num">5</span>
-      <span class="stat-label">módulos práticos</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">Vitalício</span>
-      <span class="stat-label">acesso ao conteúdo</span>
+
+  </div>
+</section>
+
+<!-- ═══════════ PAIN ═══════════ -->
+<section class="section section-darker">
+  <div class="container">
+    <div class="pain-grid">
+      <div>
+        <span class="section-label">Você se identifica com isso?</span>
+        <h2 class="section-title">Você quer mais do que uma fé de aparência</h2>
+        <p style="font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:24px; line-height:1.7;">
+          Muita gente sente que a fé deveria ser mais do que rezar de vez em quando ou ir à missa por obrigação. Se você se sente assim, saiba: você não está sozinho.
+        </p>
+        <ul class="pain-list">
+          <li><span class="pain-icon">😔</span><span>Você sente que a fé ficou vazia ou repetitiva — e não sabe como mudar isso.</span></li>
+          <li><span class="pain-icon">😕</span><span>Você lê a Bíblia mas não consegue aplicar o que leu no dia seguinte.</span></li>
+          <li><span class="pain-icon">😰</span><span>Você quer crescer espiritualmente mas não tem quem te oriente com clareza.</span></li>
+          <li><span class="pain-icon">😓</span><span>Você se distrai fácil nas orações e sente que não está progredindo de verdade.</span></li>
+          <li><span class="pain-icon">😞</span><span>Você quer viver com propósito, mas a rotina engole tudo — inclusive a fé.</span></li>
+        </ul>
+      </div>
+      <div class="pain-box">
+        <h3>Existe um caminho de saída</h3>
+        <p>O Caminho Vivo foi criado exatamente para quem está nesse lugar. Um método prático, simples e profundo para você viver a fé que sempre quis ter.</p>
+        <a href="#inscricao" class="btn-blue" style="max-width:100%;">Quero sair desse lugar →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PAIN -->
-<section class="pain">
-  <div class="container pain-grid">
-    <div>
-      <span class="section-label">Você se identifica com isso?</span>
-      <h2 class="section-title">Você quer mais do que<br>uma fé de aparência</h2>
-      <p style="color:rgba(255,255,255,0.55); margin-bottom:24px; font-size:0.97rem;">
-        Muita gente sente que a fé deveria ser mais do que rezar de vez em quando ou ir à missa por obrigação. Se você se sente assim, saiba: você não está sozinho.
-      </p>
-      <ul class="pain-list">
-        <li><span class="pain-icon">😔</span><span>Você sente que a fé ficou vazia ou repetitiva — e não sabe como mudar isso.</span></li>
-        <li><span class="pain-icon">😕</span><span>Você lê a Bíblia mas não consegue aplicar o que leu no dia seguinte.</span></li>
-        <li><span class="pain-icon">😰</span><span>Você quer crescer espiritualmente mas não tem quem te oriente com clareza.</span></li>
-        <li><span class="pain-icon">😓</span><span>Você se distrai fácil nas orações e sente que não está progredindo de verdade.</span></li>
-        <li><span class="pain-icon">😞</span><span>Você quer viver com propósito, mas a rotina engole tudo — inclusive a fé.</span></li>
-      </ul>
-    </div>
-    <div class="pain-cta-box">
-      <h3>Existe um caminho de saída</h3>
-      <p>O Caminho Vivo foi criado exatamente para quem está nesse lugar. Um método prático, simples e profundo para você viver a fé que sempre quis ter.</p>
-      <a href="#inscricao" class="btn-blue">Quero sair desse lugar →</a>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section class="benefits" id="beneficios">
+<!-- ═══════════ BENEFITS ═══════════ -->
+<section class="section section-dark" id="beneficios">
   <div class="container text-center">
     <span class="section-label">O que você vai conquistar</span>
     <h2 class="section-title">Uma vida espiritual que realmente faz sentido</h2>
     <div class="divider"></div>
     <p class="section-sub">Não é teoria. É prática real que você aplica logo na primeira semana.</p>
-
     <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">🙏</div>
-        <h3>Viver a fé todo dia</h3>
-        <p>Transforme sua rotina com práticas simples e poderosas que encaixam na sua vida real — sem pressão nem culpa.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">📖</div>
-        <h3>Entender o Catecismo de verdade</h3>
-        <p>Aprenda o que a Igreja ensina de forma clara, acessível e sem complicações desnecessárias.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">✝️</div>
-        <h3>Bíblia aplicada no dia a dia</h3>
-        <p>Descubra como os ensinamentos bíblicos falam diretamente com as situações que você vive agora.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🧭</div>
-        <h3>Direção espiritual clara</h3>
-        <p>Chega de andar em círculos. Você vai ter um norte claro para crescer com consistência e profundidade.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">⏰</div>
-        <h3>Disciplina espiritual sustentável</h3>
-        <p>Construa hábitos espirituais que resistem à correria do dia a dia — sem perfeccionismo, com fidelidade.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🌟</div>
-        <h3>Viver com propósito real</h3>
-        <p>Conecte sua fé à sua missão de vida. Cada dia vai ter mais sentido quando a fé estiver no centro.</p>
-      </div>
+      <div class="benefit-card"><div class="benefit-icon">🙏</div><h3>Viver a fé todo dia</h3><p>Transforme sua rotina com práticas simples e poderosas que encaixam na sua vida real — sem pressão nem culpa.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">📖</div><h3>Entender o Catecismo de verdade</h3><p>Aprenda o que a Igreja ensina de forma clara, acessível e sem complicações desnecessárias.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">✝️</div><h3>Bíblia aplicada no dia a dia</h3><p>Descubra como os ensinamentos bíblicos falam diretamente com as situações que você vive agora.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🧭</div><h3>Direção espiritual clara</h3><p>Chega de andar em círculos. Você vai ter um norte claro para crescer com consistência e profundidade.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">⏰</div><h3>Disciplina espiritual sustentável</h3><p>Construa hábitos espirituais que resistem à correria do dia a dia — sem perfeccionismo, com fidelidade.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🌟</div><h3>Viver com propósito real</h3><p>Conecte sua fé à sua missão de vida. Cada dia vai ter mais sentido quando a fé estiver no centro.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<section class="social-proof" id="depoimentos">
+<!-- ═══════════ TESTIMONIALS ═══════════ -->
+<section class="section section-darker" id="depoimentos">
   <div class="container text-center">
     <span class="section-label">O que dizem nossos alunos</span>
     <h2 class="section-title">Histórias reais de quem<br>encontrou o Caminho Vivo</h2>
     <div class="divider"></div>
-
     <div class="testimonials-grid">
       <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Passei anos me sentindo perdida na fé. Ia à missa, rezava, mas parecia que faltava algo. Depois de duas semanas no Caminho Vivo, comecei a enxergar a diferença na minha oração, no meu casamento, em tudo. É real."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">AM</div>
-          <div>
-            <div class="author-name">Ana Maria S.</div>
-            <div class="author-role">Professora, 38 anos · Minas Gerais</div>
-          </div>
-        </div>
+        <div class="testimonial-author"><div class="author-avatar">AM</div><div><div class="author-name">Ana Maria S.</div><div class="author-role">Professora, 38 anos · Minas Gerais</div></div></div>
       </div>
       <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Eu tentei ler o Catecismo sozinho várias vezes e sempre desistia. No curso, aprendi o mesmo conteúdo de um jeito que finalmente faz sentido. Hoje já tenho uma prática diária e não troco por nada."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">RC</div>
-          <div>
-            <div class="author-name">Roberto C.</div>
-            <div class="author-role">Engenheiro, 44 anos · São Paulo</div>
-          </div>
-        </div>
+        <div class="testimonial-author"><div class="author-avatar">RC</div><div><div class="author-name">Roberto C.</div><div class="author-role">Engenheiro, 44 anos · São Paulo</div></div></div>
       </div>
       <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"O que mais me surpreendeu foi o acompanhamento individual. Me senti ouvida pela primeira vez em muito tempo na minha jornada espiritual. O grupo de partilha também é incrível."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">JF</div>
-          <div>
-            <div class="author-name">Juliana F.</div>
-            <div class="author-role">Mãe de família, 31 anos · Rio de Janeiro</div>
-          </div>
-        </div>
+        <div class="testimonial-author"><div class="author-avatar">JF</div><div><div class="author-name">Juliana F.</div><div class="author-role">Mãe de família, 31 anos · Rio de Janeiro</div></div></div>
       </div>
       <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Pensava que era complicado demais entender os dogmas. O Caminho Vivo me mostrou que dá pra aprender e aplicar. Minha oração mudou. Minha paz interior mudou. Valeu muito mais do que esperava."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">TP</div>
-          <div>
-            <div class="author-name">Thiago P.</div>
-            <div class="author-role">Empresário, 52 anos · Paraná</div>
-          </div>
-        </div>
+        <div class="testimonial-author"><div class="author-avatar">TP</div><div><div class="author-name">Thiago P.</div><div class="author-role">Empresário, 52 anos · Paraná</div></div></div>
       </div>
       <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Voltei à Igreja depois de anos afastada, mas me sentia perdida. O curso me deu estrutura, clareza e, acima de tudo, me reconectou com Deus de um jeito que eu nunca imaginei ser possível."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">CM</div>
-          <div>
-            <div class="author-name">Cláudia M.</div>
-            <div class="author-role">Advogada, 47 anos · Goiás</div>
-          </div>
-        </div>
+        <div class="testimonial-author"><div class="author-avatar">CM</div><div><div class="author-name">Cláudia M.</div><div class="author-role">Advogada, 47 anos · Goiás</div></div></div>
       </div>
       <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Nunca fui de cursos online, mas esse mudou minha visão. O conteúdo é leve, profundo e prático ao mesmo tempo. Em 30 dias senti uma transformação que anos de leitura sozinho não me deram."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">MR</div>
-          <div>
-            <div class="author-name">Marcos R.</div>
-            <div class="author-role">Médico, 39 anos · Bahia</div>
-          </div>
-        </div>
+        <div class="testimonial-author"><div class="author-avatar">MR</div><div><div class="author-name">Marcos R.</div><div class="author-role">Médico, 39 anos · Bahia</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MODULES -->
-<section class="modules" id="modulos">
+<!-- ═══════════ MODULES ═══════════ -->
+<section class="section section-dark" id="modulos">
   <div class="container">
     <div class="text-center" style="margin-bottom:44px;">
       <span class="section-label">O que você vai aprender</span>
       <h2 class="section-title">Cinco módulos para uma fé viva e prática</h2>
       <div class="divider"></div>
     </div>
-
     <div class="modules-layout">
       <div class="module-list">
-        <div class="module-item">
-          <div class="module-num">1</div>
-          <div class="module-info">
-            <h3>Fundamentos da Fé</h3>
-            <p>Entenda o que é a fé católica de verdade — sem superficialidade. Descubra o que você acredita e por quê isso importa para cada área da sua vida.</p>
-          </div>
-        </div>
-        <div class="module-item">
-          <div class="module-num">2</div>
-          <div class="module-info">
-            <h3>Catecismo Aplicado</h3>
-            <p>Os ensinamentos da Igreja explicados de forma simples e direta. Nada de linguagem difícil — só o que você precisa saber e como viver isso na prática.</p>
-          </div>
-        </div>
-        <div class="module-item">
-          <div class="module-num">3</div>
-          <div class="module-info">
-            <h3>Dogmas na Prática</h3>
-            <p>Entenda os dogmas católicos e descubra como eles dão sentido à sua vida diária. Chega de achar que dogma é complicado — é libertador.</p>
-          </div>
-        </div>
-        <div class="module-item">
-          <div class="module-num">4</div>
-          <div class="module-info">
-            <h3>Oração e Meditação</h3>
-            <p>Aprenda a orar com profundidade e introduza práticas de meditação cristã que transformam sua relação com Deus — mesmo que você ache que não sabe rezar.</p>
-          </div>
-        </div>
-        <div class="module-item">
-          <div class="module-num">5</div>
-          <div class="module-info">
-            <h3>Aplicação no Dia a Dia</h3>
-            <p>Integre tudo que aprendeu na sua rotina real. Trabalho, família, relacionamentos — a fé vai fazer sentido em cada parte da sua vida.</p>
-          </div>
-        </div>
+        <div class="module-item"><div class="module-num">1</div><div class="module-info"><h3>Fundamentos da Fé</h3><p>Entenda o que é a fé católica de verdade — sem superficialidade. Descubra o que você acredita e por quê isso importa para cada área da sua vida.</p></div></div>
+        <div class="module-item"><div class="module-num">2</div><div class="module-info"><h3>Catecismo Aplicado</h3><p>Os ensinamentos da Igreja explicados de forma simples e direta. Nada de linguagem difícil — só o que você precisa saber e como viver isso na prática.</p></div></div>
+        <div class="module-item"><div class="module-num">3</div><div class="module-info"><h3>Dogmas na Prática</h3><p>Entenda os dogmas católicos e descubra como eles dão sentido à sua vida diária. Chega de achar que dogma é complicado — é libertador.</p></div></div>
+        <div class="module-item"><div class="module-num">4</div><div class="module-info"><h3>Oração e Meditação</h3><p>Aprenda a orar com profundidade e introduza práticas de meditação cristã que transformam sua relação com Deus — mesmo que você ache que não sabe rezar.</p></div></div>
+        <div class="module-item"><div class="module-num">5</div><div class="module-info"><h3>Aplicação no Dia a Dia</h3><p>Integre tudo que aprendeu na sua rotina real. Trabalho, família, relacionamentos — a fé vai fazer sentido em cada parte da sua vida.</p></div></div>
       </div>
-
       <div class="modules-sidebar">
         <div class="bonus-box">
           <h3>🎁 Bônus Exclusivos</h3>
-          <div class="bonus-item">
-            <div class="bonus-icon">💬</div>
-            <div>
-              <h4>Grupo de Partilha</h4>
-              <p>Comunidade exclusiva para trocar experiências, tirar dúvidas e crescer junto com outros alunos.</p>
-            </div>
-          </div>
-          <div class="bonus-item">
-            <div class="bonus-icon">📱</div>
-            <div>
-              <h4>Direção Espiritual Individual</h4>
-              <p>Acompanhamento pessoal via WhatsApp para que ninguém fique para trás na jornada.</p>
-            </div>
-          </div>
-          <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 4px;">
-            <p style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-bottom:14px;">Tudo isso incluso no curso</p>
-            <a href="#inscricao" class="btn-blue" style="width:100%; text-align:center; display:block;">Quero entrar agora →</a>
+          <div class="bonus-item"><div class="bonus-icon">💬</div><div><h4>Grupo de Partilha</h4><p>Comunidade exclusiva para trocar experiências, tirar dúvidas e crescer junto com outros alunos.</p></div></div>
+          <div class="bonus-item"><div class="bonus-icon">📱</div><div><h4>Direção Espiritual Individual</h4><p>Acompanhamento pessoal via WhatsApp para que ninguém fique para trás na jornada.</p></div></div>
+          <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:18px;margin-top:4px;">
+            <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:14px;">Tudo isso incluso no curso</p>
+            <a href="#inscricao" class="btn-blue" style="max-width:100%;">Quero entrar agora →</a>
           </div>
         </div>
       </div>
@@ -1036,86 +851,47 @@
   </div>
 </section>
 
-<!-- DIFFERENTIALS -->
-<section class="differentials">
+<!-- ═══════════ DIFFERENTIALS ═══════════ -->
+<section class="section section-darker">
   <div class="container text-center">
     <span class="section-label">Por que o Caminho Vivo é diferente</span>
-    <h2 class="section-title">Não é mais um curso de<br>espiritualidade genérica</h2>
+    <h2 class="section-title">Não é mais um curso de espiritualidade genérica</h2>
     <div class="divider"></div>
     <p class="section-sub">Cada detalhe foi pensado para quem quer crescer de verdade — não só aprender teoria.</p>
-
     <div class="diff-grid">
-      <div class="diff-item">
-        <span class="diff-emoji">🗺️</span>
-        <h3>Método passo a passo</h3>
-        <p>Uma trilha clara do começo ao fim. Você sabe exatamente onde está e para onde vai.</p>
-      </div>
-      <div class="diff-item">
-        <span class="diff-emoji">🧭</span>
-        <h3>Direção clara</h3>
-        <p>Nada vago ou genérico. Cada lição tem um objetivo e uma ação concreta para aplicar.</p>
-      </div>
-      <div class="diff-item">
-        <span class="diff-emoji">⚡</span>
-        <h3>Aplicação prática</h3>
-        <p>Cada módulo termina com exercícios que você leva para a vida real — não só para o caderno.</p>
-      </div>
-      <div class="diff-item">
-        <span class="diff-emoji">🤝</span>
-        <h3>Acompanhamento individual</h3>
-        <p>Você não está sozinho. Há suporte real para as suas dúvidas e desafios pessoais.</p>
-      </div>
-      <div class="diff-item">
-        <span class="diff-emoji">🌿</span>
-        <h3>Comunidade de apoio</h3>
-        <p>Uma comunidade viva, acolhedora e comprometida com o crescimento de cada membro.</p>
-      </div>
+      <div class="diff-item"><span class="diff-emoji">🗺️</span><h3>Método passo a passo</h3><p>Uma trilha clara do começo ao fim. Você sabe exatamente onde está e para onde vai.</p></div>
+      <div class="diff-item"><span class="diff-emoji">🧭</span><h3>Direção clara</h3><p>Nada vago ou genérico. Cada lição tem um objetivo e uma ação concreta para aplicar.</p></div>
+      <div class="diff-item"><span class="diff-emoji">⚡</span><h3>Aplicação prática</h3><p>Cada módulo termina com exercícios que você leva para a vida real — não só para o caderno.</p></div>
+      <div class="diff-item"><span class="diff-emoji">🤝</span><h3>Acompanhamento individual</h3><p>Você não está sozinho. Há suporte real para as suas dúvidas e desafios pessoais.</p></div>
+      <div class="diff-item"><span class="diff-emoji">🌿</span><h3>Comunidade de apoio</h3><p>Uma comunidade viva, acolhedora e comprometida com o crescimento de cada membro.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- ═══════════ CTA FINAL ═══════════ -->
 <section class="cta-final" id="inscricao">
   <div class="container">
-    <h2>Chegou a hora de dar o<br><em>próximo passo de verdade</em></h2>
+    <h2>Chegou a hora de dar o <em>próximo passo de verdade</em></h2>
     <p>Mais de 2.400 pessoas já encontraram direção, paz e propósito através do Caminho Vivo. Você pode ser a próxima.</p>
-    <div class="cta-group">
-      <a href="#" class="btn-gold btn-gold-lg btn-pulse">Entrar para o Caminho Vivo →</a>
-    </div>
-    <div class="guarantee-badge">
-      🛡️ Garantia de 7 dias — se não gostar, devolvemos 100% do seu investimento
+    <div class="cta-final-group">
+      <a href="#" class="btn-gold btn-pulse">Entrar para o Caminho Vivo →</a>
+      <div class="guarantee">🛡️ Garantia de 7 dias — 100% do investimento devolvido se não gostar</div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ═══════════ FAQ ═══════════ -->
 <section class="faq">
   <div class="container text-center">
     <span class="section-label">Dúvidas frequentes</span>
-    <h2 class="section-title">Tudo que você precisa saber<br>antes de entrar</h2>
+    <h2 class="section-title">Tudo que você precisa saber antes de entrar</h2>
     <div class="divider"></div>
-
     <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">Preciso ter conhecimento prévio sobre a fé católica?</div>
-        <div class="faq-a">Não. O curso foi desenvolvido para todos — do iniciante ao mais experiente. Começa do básico e aprofunda gradualmente, sem deixar ninguém para trás.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Quanto tempo por dia preciso dedicar?</div>
-        <div class="faq-a">Cerca de 20 a 30 minutos por dia são suficientes. As lições são curtas, objetivas e projetadas para pessoas com rotina real e cheia.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">O curso é presencial ou online?</div>
-        <div class="faq-a">100% online. Você acessa pelo celular, tablet ou computador, a qualquer hora, de qualquer lugar. O acesso é vitalício após a inscrição.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Como funciona a direção espiritual individual?</div>
-        <div class="faq-a">Após sua inscrição, você recebe acesso a um canal exclusivo no WhatsApp para tirar dúvidas e receber orientações personalizadas ao longo da jornada.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">E se eu não gostar? Tem garantia?</div>
-        <div class="faq-a">Sim. Você tem 7 dias para experimentar o curso. Se por qualquer motivo não ficar satisfeito, basta entrar em contato e devolvemos 100% do que você pagou — sem perguntas.</div>
-      </div>
+      <div class="faq-item"><div class="faq-q">Preciso ter conhecimento prévio sobre a fé católica?</div><div class="faq-a">Não. O curso foi desenvolvido para todos — do iniciante ao mais experiente. Começa do básico e aprofunda gradualmente, sem deixar ninguém para trás.</div></div>
+      <div class="faq-item"><div class="faq-q">Quanto tempo por dia preciso dedicar?</div><div class="faq-a">Cerca de 20 a 30 minutos por dia são suficientes. As lições são curtas, objetivas e projetadas para pessoas com rotina real e cheia.</div></div>
+      <div class="faq-item"><div class="faq-q">O curso é presencial ou online?</div><div class="faq-a">100% online. Você acessa pelo celular, tablet ou computador, a qualquer hora, de qualquer lugar. O acesso é vitalício após a inscrição.</div></div>
+      <div class="faq-item"><div class="faq-q">Como funciona a direção espiritual individual?</div><div class="faq-a">Após sua inscrição, você recebe acesso a um canal exclusivo no WhatsApp para tirar dúvidas e receber orientações personalizadas ao longo da jornada.</div></div>
+      <div class="faq-item"><div class="faq-q">E se eu não gostar? Tem garantia?</div><div class="faq-a">Sim. Você tem 7 dias para experimentar o curso. Se por qualquer motivo não ficar satisfeito, basta entrar em contato e devolvemos 100% do que você pagou — sem perguntas.</div></div>
     </div>
   </div>
 </section>
@@ -1131,7 +907,7 @@
   <p>© 2025 Caminho Vivo. Todos os direitos reservados.</p>
 </footer>
 
-<!-- Floating CTA Bar -->
+<!-- Floating bar -->
 <div class="floating-bar" id="floatingBar">
   <p>🕊️ Vagas abertas — entre para o Caminho Vivo hoje</p>
   <a href="#inscricao" class="btn-blue">Quero me inscrever</a>
@@ -1146,14 +922,11 @@
       if (!isOpen) item.classList.add('open');
     });
   });
-
   const bar = document.getElementById('floatingBar');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 600) bar.classList.add('visible');
-    else bar.classList.remove('visible');
+    bar.classList.toggle('visible', window.scrollY > 600);
   });
-
-  document.querySelector('.video-placeholder')?.addEventListener('click', function() {
+  document.querySelector('.video-placeholder')?.addEventListener('click', () => {
     alert('Insira aqui a URL do seu vídeo de vendas.');
   });
 </script>
